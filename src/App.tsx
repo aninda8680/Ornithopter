@@ -3,6 +3,11 @@ import { ChevronDown, Play, ArrowRight } from 'lucide-react';
 import FuzzyText from './components/Font';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import  ScrollProgress  from "./components/magicui/scroll-progress";
+import CustomCursor from './components/ui/Cursor';
+
+
+
 
   
 
@@ -44,17 +49,20 @@ const OrnithopterShowcase = () => {
 
   return (
 
-    <div className="bg-black text-white overflow-x-hidden">
+    <div className="bg-black max-w-screen text-white overflow-scroll">
+      <ScrollProgress />
+
       <Navbar />
-          
+      
+      <CustomCursor />
 
       {/* Hero Section - Apple Style */}
-      <section ref={heroRef} className="relative h-screen w-screen flex flex-col items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative h-screen min-w-screen flex flex-col items-center justify-center overflow-hidden">
         
         
         {/* Dynamic background based on scroll */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black transition-all duration-1000"
+          className="absolute w-screen inset-0 bg-gradient-to-br from-black via-gray-900 to-black transition-all duration-1000"
           style={{
             transform: `scale(${1 + scrollY * 0.0005})`,
             opacity: Math.max(0.3, 1 - scrollY * 0.001)
@@ -67,7 +75,7 @@ const OrnithopterShowcase = () => {
             return (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-white rounded-full opacity-20"
+                className="absolute w-2 h-2 bg-white rounded-full opacity-20 "
                 style={{
                   left: `${10 + (i * 3) % 80}%`,
                   top: `${10 + (i * 7) % 80}%`,
@@ -125,8 +133,18 @@ const OrnithopterShowcase = () => {
         </div>
       </section>
 
+      {/* Divider Line with Text */}
+      <div className="flex min-w-full items-center justify-center my-16 select-none">
+        <div className="flex-grow h-px bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60"></div>
+        <span className="mx-6 text-2xl md:text-3xl font-bold tracking-widest uppercase bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
+          Flying into the future
+        </span>
+        <div className="flex-grow h-px w-py bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60"></div>
+      </div>
+      
+
       {/* Video Showcase Section */}
-      <section className="h-screen sticky top-0 flex items-center justify-center bg-black">
+      <section className="h-screen min-w-full sticky top-0 flex items-center justify-center bg-black">
         <div className="relative w-full h-full flex items-center justify-center">
           {/* Mock video container with Apple-style presentation */}
           <div 
@@ -173,8 +191,18 @@ const OrnithopterShowcase = () => {
         </div>
       </section>
 
+      {/* Divider Line with Text */}
+      <div className="flex items-center justify-center my-16 select-none">
+        <div className="flex-grow h-px bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60"></div>
+        <span className="mx-6 text-2xl md:text-3xl font-bold tracking-widest uppercase bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
+          Unleash Innovation
+        </span>
+        <div className="flex-grow h-px bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-60"></div>
+      </div>
+      
+
       {/* Features Section - Apple Style Cards */}
-      <section className="py-32 bg-black">
+      <section id="features" className=" min-w-screen py-32 bg-black">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-7xl font-thin mb-8 leading-tight">
@@ -237,7 +265,7 @@ const OrnithopterShowcase = () => {
       </section>
 
       {/* Specs Section */}
-      <section className="py-32 bg-gradient-to-b from-black to-gray-900">
+      <section className=" min-w-screen py-32 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2 className="text-5xl md:text-6xl font-thin mb-16">
             Technical
@@ -266,7 +294,7 @@ const OrnithopterShowcase = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black">
+      <section className=" min-w-screen py-32 bg-black">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-5xl md:text-6xl font-thin mb-8 leading-tight">
             The future
@@ -290,13 +318,11 @@ const OrnithopterShowcase = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 bg-black border-t border-gray-900">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <div className="text-gray-600 text-sm">
-            Ornithopter X © 2025. Redefining the boundaries of flight.
-          </div>
-        </div>
-      </footer>
+      <div id="footer">
+      <Footer />
+      </div>
+
+      
 
       <style >{`
         @keyframes fadeInUp {
@@ -311,6 +337,7 @@ const OrnithopterShowcase = () => {
         }
       `}</style>
     </div>
+    
     
   );
 };
