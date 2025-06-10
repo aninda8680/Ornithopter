@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+````markdown
+# 🕊️ Ornithopter X
 
-## Expanding the ESLint configuration
+**Where Imagination Takes Flight**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Ornithopter X is not just a portfolio — it's a digital tribute to the futuristic dream of human-inspired flight. Inspired by da Vinci’s sketches and sci-fi visions, this interactive web experience brings the Ornithopter concept to life with motion, design, and storytelling.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 The Product: Ornithopter
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+An **Ornithopter** is a flying machine that mimics the flapping wings of birds or insects. Unlike drones or planes, it relies on biomimicry — blending **engineering and nature** to achieve sustainable, agile flight.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+In this concept:
+- ✈️ **Energy-efficient flapping-wing mechanism**
+- 🧠 Controlled by AI-assisted stabilization
+- 🦾 Inspired by the anatomy of birds and dragonflies
+- ♻️ Designed for low-noise, eco-conscious aviation
+
+Imagine a world where personal flight is not noisy or artificial — but *natural*.
+
+---
+
+## 🌐 The Interface
+
+This site simulates the feel of the Ornithopter: clean, lightweight, and precise. Through scroll-triggered animation and immersive visuals, visitors glide through the vision as if flying the craft themselves.
+
+---
+
+## 🔧 Tech Stack
+
+- **React** + **Vite** – Blazing fast SPA
+- **Tailwind CSS** – Minimalist, clean design
+- **Framer Motion** – Smooth scroll animations
+- **Lucide Icons** – Crisp UI elements
+- **Reactbits Components** - Fuzzy Text
+
+---
+
+## 🧪 Future Ideas
+- Animate a 3D model of the Ornithopter
+
+
+---
+
+## 📦 Setup
+
+```bash
+git clone https://github.com/aninda8680/ornithopter-x.git
+cd ornithopter
+npm install
+npm run dev
+````
+
+
+## 📜 License
+
+---- License. Feel free to remix or contribute.
+
+> “Once you have tasted flight, you will forever walk the earth with your eyes turned skyward.” — *Leonardo da Vinci*
+
